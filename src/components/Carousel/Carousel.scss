@@ -1,0 +1,16 @@
+.carousel {
+  &__stage-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0;
+  }
+
+  &__stage {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}

@@ -1,0 +1,15 @@
+.slide {
+  display: inline-block;
+  &--mobile {
+    height: 100%;
+    width: 100vw;
+    padding: 20px;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
