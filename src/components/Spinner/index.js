@@ -4,6 +4,6 @@ import './Spinner.scss';
 
 export default () => {
   return(
-    <h1>I am the spinner</h1>
+    <div className="spinner" />
   );
 }

@@ -27,6 +27,10 @@ export default class Slide extends Component {
       <li
         className={`slide slide--${device}`}
         ref={this.slideRef}
+        style={{
+          // set the width for desktop
+          width: device === 'desktop' ? `${100 / this.context.slidesPerScreen}vw` : null
+        }}
       >
         {
           // Ideally, we'd want to use a title or description for the alt tag, but that's not available from the API

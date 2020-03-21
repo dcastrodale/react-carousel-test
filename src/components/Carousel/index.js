@@ -73,7 +73,7 @@ class Carousel extends Component {
 
   render() {
     const { slides } = this.props;
-    const { device } = this.context;
+    const { device, slidesPerScreen } = this.context;
     const { slideWidth, currentIndex } = this.state;
 
     return (
@@ -97,11 +97,18 @@ class Carousel extends Component {
             }
           </ul>
         </div>
+
         <Controls
           advanceCarousel={this.advanceCarousel}
           atStart={this.state.currentIndex === 0}
-          atEnd={this.state.currentIndex >= this.props.slides.length - 1}
-        />
+          atEnd={
+            device === 'mobile' ?
+              // For mobile, we can just check if we're at the end of the slides array
+              this.state.currentIndex >= this.props.slides.length - 1 :
+              // For desktop we need to take into account the slides already visible
+              this.state.currentIndex + slidesPerScreen >= this.props.slides.length
+          }
+  />
       </div>
     );
   }

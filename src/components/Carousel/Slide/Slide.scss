@@ -24,4 +24,20 @@
     height: $slide-title-height;
     line-height: $slide-title-height;
   }
+
+  &--desktop {
+    padding: 0 $desktop-padding-small;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .slide__title {
+      font-size: 18px;
+      line-height: 18px;
+      margin: $desktop-padding-small;
+    }
+  }
 }

@@ -71,10 +71,10 @@ export default class App extends Component {
         value={
           this.state.isMobile ?
             { device: 'mobile' } :
-            { device: 'desktop '}
+            { device: 'desktop', slidesPerScreen: 5 }
         }
       >
-        <div className="app">
+        <div className={`app app--${this.state.isMobile ? 'mobile' : 'desktop'}`}>
           <div className="app__header">
             <h1>Carousel Test</h1>
           </div>
