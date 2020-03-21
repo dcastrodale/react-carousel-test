@@ -1,0 +1,63 @@
+@import 'styles/main';
+
+.controls {
+  position: absolute;
+  width: calc(100% - (2 * #{$mobile-padding}));
+  height: 100%;
+  left: $mobile-padding; top: 0;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
+
+  &__button {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(256, 256, 256, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 45px;
+      height: 50px;
+      background-image: url('/assets/arrow.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__prev {
+    left: -50px;
+    border-radius: 50%;
+
+    &::after {
+      top: 50%;
+      right: 15px;
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+
+  &__next {
+    right: -50px;
+    border-radius: 50%;
+
+    &::after {
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--inactive {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

@@ -1,10 +1,14 @@
+@import 'styles/main';
+
 .slide {
   display: inline-block;
   &--mobile {
     height: 100%;
     width: 100vw;
-    padding: 20px;
+    padding: $mobile-padding;
     flex-shrink: 0;
+    // Collapse padding into carousel padding
+    transform: translateX(-$mobile-padding);
 
     img {
       display: block;

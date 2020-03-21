@@ -1,4 +1,9 @@
+@import 'styles/main';
+
 .carousel {
+  position: relative;
+  padding: $mobile-padding;
+
   &__stage-wrapper {
     width: 100%;
     overflow: hidden;
@@ -7,6 +12,7 @@
   }
 
   &__stage {
+    transition: transform 0.5s ease-in-out;
     list-style-type: none;
     padding: 0;
     display: flex;
