@@ -15,7 +15,7 @@
     height: 100px;
     background-color: rgba(256, 256, 256, 0.5);
     position: absolute;
-    top: 50%;
+    top: calc(50% - (#{$slide-title-height} / 2));
     transform: translateY(-50%);
     z-index: 100;
 

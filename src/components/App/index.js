@@ -58,12 +58,13 @@ export default class App extends Component {
     this.setState({
       loading: true,
     }, () => {
-      // Do this in the setState callback to avoid race conditions
+      // Fetch images in the setState callback to avoid race conditions with the loading state
       this.fetchImageList();
     });
   }
 
-  // TODO: This is why quite an ugly render method, with a lot of logic contained it it
+  // TODO: This is quite an ugly render method, with a lot of logic contained it it
+  // Refactor, possibly extrapolate some of the logic out into generateMarkup functions
   render() {
     return(
       <DeviceContext.Provider
@@ -74,6 +75,9 @@ export default class App extends Component {
         }
       >
         <div className="app">
+          <div className="app__header">
+            <h1>Carousel Test</h1>
+          </div>
           {
             // Show the loading spinner if we're fetching the image list
             this.state.loading &&

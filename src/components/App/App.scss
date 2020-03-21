@@ -4,4 +4,14 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  &__header {
+    background-color: $grey;
+    padding: $mobile-padding;
+
+    h1 {
+      margin-top: 0;
+      color: $blue;
+    }
+  }
 }

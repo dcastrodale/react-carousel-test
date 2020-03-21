@@ -16,4 +16,12 @@
       height: auto;
     }
   }
+
+  &__title {
+    font-size: 32px;
+    color: $blue;
+    margin: 0;
+    height: $slide-title-height;
+    line-height: $slide-title-height;
+  }
 }
