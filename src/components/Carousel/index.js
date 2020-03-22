@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { DeviceContext } from 'components/App/AppContext';
 import Slide from 'components/Carousel/Slide';
@@ -115,3 +116,9 @@ class Carousel extends Component {
 }
 
 export default Carousel;
+
+Carousel.propTypes = {
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }))
+};

@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Controls.scss';
 
-export default ({ advanceCarousel, atStart, atEnd }) => {
+const Controls = ({ advanceCarousel, atStart, atEnd }) => {
   return (
     <div className="controls">
       <div
@@ -17,4 +18,12 @@ export default ({ advanceCarousel, atStart, atEnd }) => {
       />
     </div>
   );
-}
+};
+
+export default Controls;
+
+Controls.propTypes = {
+  advanceCarousel: PropTypes.func,
+  atStart: PropTypes.bool,
+  atEnd: PropTypes.bool,
+};

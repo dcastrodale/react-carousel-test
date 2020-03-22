@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { DeviceContext } from 'components/App/AppContext';
 import './Slide.scss';
@@ -48,3 +49,13 @@ export default class Slide extends Component {
     );
   }
 }
+
+
+Slide.propTypes = {
+  data: PropTypes.shape({
+    webformatURL: PropTypes.string.isRequired,
+    user: PropTypes.string,
+    tags: PropTypes.string,
+    id: PropTypes.number,
+  })
+};
