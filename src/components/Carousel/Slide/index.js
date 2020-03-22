@@ -13,9 +13,10 @@ export default class Slide extends Component {
   static contextType = DeviceContext;
 
   componentDidMount() {
-    const { order, setSlideRef } = this.props;
-    // If this is the first slide, we will use it to set a ref in the Carousel component
-    if (order === 0) {
+    const { setSlideRef } = this.props;
+    // If the parent passes in setSlideRef, we'll use it to set the ref.
+    // Otherwise, ignore
+    if (setSlideRef && typeof setSlideRef === 'function') {
       setSlideRef(this.slideRef);
     }
   }
@@ -29,13 +30,15 @@ export default class Slide extends Component {
         className={`slide slide--${device}`}
         ref={this.slideRef}
         style={{
-          // set the width for desktop
+          /* set the width for desktop */
           width: device === 'desktop' ? `${100 / this.context.slidesPerScreen}vw` : null
         }}
       >
         {
-          // Ideally, we'd want to use a title or description for the alt tag, but that's not available from the API
-          // So we'll use a list of tags instead
+          /*
+            Ideally, we'd want to use a title or description for the alt tag, but that's not available from the API
+            So we'll use a list of tags instead
+          */
         }
         <img
           className="slide__img"

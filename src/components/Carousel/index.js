@@ -91,8 +91,8 @@ class Carousel extends Component {
                 <Slide
                   data={slide}
                   key={slide.id}
-                  order={i}
-                  setSlideRef={this.setSlideRef}
+                  /* We only need one ref, so only pass in the function for the first Slide */
+                  setSlideRef={i === 0 ? this.setSlideRef : null}
                 />
               ))
             }
