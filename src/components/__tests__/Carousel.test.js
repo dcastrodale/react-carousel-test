@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 
 import Carousel from 'components/Carousel';
 
+// TODO: break this off into a stub
 const carouselProps = {
   slides: [
     {
@@ -67,8 +68,22 @@ it('should render a carousel div', () => {
 });
 
 it('should render n number of Slides for n slides in props', () => {
+  // TODO: import the stub and then use slice to pull off n number of slides
   expect(wrapped.find('Slide').length).toEqual(2);
-})
+});
+
+it('should update currentIndex when advanceCarousel is called', () => {
+  const instance = wrapped.instance();
+  expect(wrapped.state('currentIndex')).toBe(0);
+
+  instance.advanceCarousel(1);
+  wrapped.update();
+  expect(wrapped.state('currentIndex')).toBe(1);
+
+  instance.advanceCarousel(-1);
+  wrapped.update();
+  expect(wrapped.state('currentIndex')).toBe(0);
+});
 
 afterEach(() => {
   wrapped.unmount();
