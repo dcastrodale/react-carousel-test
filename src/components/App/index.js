@@ -33,7 +33,6 @@ export default class App extends Component {
     // The API uses +s instead of standard URI encoding to handle spaces so we have to do it ourselves.
     // TODO: Handle encoding special characters here
     const encodedQuery = this.props.query;
-    console.log(encodedQuery);
 
     axios.get(`${API_URL}?key=${API_KEY}&q=${encodedQuery}&image_type=photo`)
       // Happy-path: set the list of images in state

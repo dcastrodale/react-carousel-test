@@ -83,6 +83,7 @@ class Carousel extends Component {
           <ul
             className="carousel__stage"
             style={{
+              // This part actually moves the slide
               transform: `translateX(-${slideWidth * currentIndex}px)`,
             }}
           >
