@@ -32,7 +32,8 @@ export default class App extends Component {
   fetchImageList() {
     // The API uses +s instead of standard URI encoding to handle spaces so we have to do it ourselves.
     // TODO: Handle encoding special characters here
-    const encodedQuery = this.props.query.replace(/\s/g, '+');
+    const encodedQuery = this.props.query;
+    console.log(encodedQuery);
 
     axios.get(`${API_URL}?key=${API_KEY}&q=${encodedQuery}&image_type=photo`)
       // Happy-path: set the list of images in state
@@ -92,7 +93,7 @@ export default class App extends Component {
             // Show the carousel if all went well
             !this.state.loading &&
               this.state.imageListFetched &&
-              this.state.images.length &&
+              this.state.images.length > 0 &&
                 <Carousel slides={this.state.images} />
           }
 
