@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { API_KEY, API_URL, NUMBER_OF_IMAGES } from 'config';
+import { API_KEY, API_URL } from 'config';
 import { isMobile } from 'helpers';
 
 import { DeviceContext } from 'components/App/AppContext';
@@ -30,11 +30,15 @@ export default class App extends Component {
   }
 
   fetchImageList() {
-    axios.get(`${API_URL}?key=${API_KEY}&q=beautiful+landscape&image_type=photo`)
+    // The API uses +s instead of standard URI encoding to handle spaces so we have to do it ourselves.
+    // TODO: Handle encoding special characters here
+    const encodedQuery = this.props.query.replace(/\s/g, '+');
+
+    axios.get(`${API_URL}?key=${API_KEY}&q=${encodedQuery}&image_type=photo`)
       // Happy-path: set the list of images in state
       .then(({ data }) => {
         this.setState({
-          images: data.hits.slice(0, NUMBER_OF_IMAGES),
+          images: data.hits.slice(0, this.props.numberOfImages),
           loading: false,
           errored: false,
           imageListFetched: true,

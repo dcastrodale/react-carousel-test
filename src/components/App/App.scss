@@ -20,6 +20,7 @@
   }
 
   &--desktop {
+    background-color: $grey;
     .app__header {
       padding-left: $desktop-padding-large;
       font-size: 36px;

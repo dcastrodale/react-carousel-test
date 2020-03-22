@@ -109,6 +109,7 @@ class Carousel extends Component {
               // For desktop we need to take into account the slides already visible
               this.state.currentIndex + slidesPerScreen >= this.props.slides.length
           }
+          device={device}
   />
       </div>
     );
