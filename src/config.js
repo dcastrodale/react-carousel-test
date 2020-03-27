@@ -9,6 +9,4 @@ export const API_URL = `https://pixabay.com/api/`;
  */
 export const API_KEY = `9656065-a4094594c34f9ac14c7fc4c39`;
 
-export const NUMBER_OF_IMAGES = 6;
-
 export const MOBILE_BREAKPOINT = 768;
