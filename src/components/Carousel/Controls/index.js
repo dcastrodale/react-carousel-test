@@ -11,6 +11,7 @@ const Controls = ({ advanceCarousel, atStart, atEnd, device }) => {
         className={`controls__button controls__prev controls--${atStart ? 'inactive' : 'active'}`}
         role="button"
         onClick={() => advanceCarousel(-1)}
+        tabIndex={1}
       >
         Prev
       </div>
@@ -18,6 +19,7 @@ const Controls = ({ advanceCarousel, atStart, atEnd, device }) => {
         className={`controls__button controls__next controls--${atEnd ? 'inactive' : 'active'}`}
         role="button"
         onClick={() => advanceCarousel(1)}
+        tabIndex={2}
       >
         Next
       </div>
